@@ -2,6 +2,7 @@ import React from 'react';
 //components
 import Nav from './components/Nav';
 import AuthRoute from './util/AuthRoute';
+import UnauthRoute from './util/UnauthRoute';
 //pages
 import About from './pages/About';
 import Home from './pages/Home';
@@ -17,7 +18,7 @@ import jwtDecode from 'jwt-decode';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
-let authenticated;
+let authenticated=false
 const token = localStorage.FBIdToken;
 if(token) {
   //we have token, we want to decode it with jwt-decode, inside there is a expiration date
@@ -43,7 +44,9 @@ class App extends React.Component {
           <Route path="/" exact component={Home} />
           <Route path="/board" component={Board} />
           <Route path="/about" component={About} />
-          <Route path="/post" component={Post} />
+          {//if the user is not authenticated the '/post' route will go to '/login'
+          } 
+          <UnauthRoute path="/post" component={Post} authenticated={authenticated}/>
           {//if the user is already authenticated the '/login' and '/signup' route will go to '/board'
           } 
           <AuthRoute path="/login" component={Login} authenticated={authenticated}/>

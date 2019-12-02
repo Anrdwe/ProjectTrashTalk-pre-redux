@@ -1,17 +1,18 @@
 import React from 'react'
 import PostComponent from '../components/PostComponent'
+import Axios from 'axios'
 
 class Post extends React.Component {
     constructor() {
         super()
         this.state = {
-            email: "",
-            username: "",
-            org: "",
             message: "",
-            imageUrl: ""
+            imageUrl: "",
+            loading: false,
+            errors: {}
         }
         this.handleChange=this.handleChange.bind(this)
+        this.handleSubmit= this.handleSubmit.bind(this)
     }
 
     handleChange(event) {
@@ -20,16 +21,36 @@ class Post extends React.Component {
             [name] : value
         })
     }
-
-    handleSubmit(p){
-        console.log(p);
-        fetch(`http://localhost:4000/posts/add?email=${p.state.email}&username=${p.state.username}&org=${p.state.org}&message=${p.state.message}`)
-        .catch(err => console.error(err))
+    //NOT DONE
+    //TODO: header for authorization 
+    handleSubmit(event){
+        event.preventDefault();
+        this.setState({
+            loading: true
+        })
+        const postData = {
+            message: this.state.message
+        }
+        let postId
+        Axios.post('/post', postData)
+            .then(res => {
+                console.log(res)
+                postId = res.data.id
+                this.setState({
+                    loading: false
+                })
+            })
+        .catch(err => {
+            this.setState({
+                errors: err.response.data,
+                loading: false
+            })
+        })
     }
 
     render() {
         return(
-            <PostComponent handleChange={this.handleChange} state={this.state} handleSubmit={()=>{this.handleSubmit(this)}}/>
+            <PostComponent handleChange={this.handleChange} state={this.state} handleSubmit={this.handleSubmit}/>
         )
     }
 }

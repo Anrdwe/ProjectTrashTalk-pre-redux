@@ -31,8 +31,11 @@ class Login extends React.Component {
             .then(res => {
                 //login successful
                 console.log(res)
-                //token saved to local storage
-                localStorage.setItem('FBIdToken', `Bearer ${res.data.token}`)
+                const FBIdToken = `Bearer ${res.data.token}`
+                //authentication token saved to local storage
+                localStorage.setItem('FBIdToken', FBIdToken)
+                //authnetication token added to the header as the default
+                Axios.defaults.headers.common['Authorization'] = FBIdToken
                 this.setState({
                     loading: false
                 })
