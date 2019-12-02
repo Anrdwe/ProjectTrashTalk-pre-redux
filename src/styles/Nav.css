@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /*background-color: #24252A; */
+}
+
+li, button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #24252A;
+}
+
+.logo {
+    cursor: pointer;
+    margin-right: auto;
+    width: 150px;
+    fill: white;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav-style {
+    transition: all 0.3s ease 0s;
+}
+.nav-style :hover{
+    color: #0088a9;
+}
+
+button {
+    padding: 9px 25px;
+    background-color: rgba(121, 169, 89, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    background-color: rgba(121, 169, 89, 0.8);
+}
+
+@media screen and (max-width: 600px) {
+    .nav-links a:not(:first-child) {display: none;}
+    .nav-links a:icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .nav-links.responsive {positive: relative;}
+    .nav-links.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .nav-links.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+}

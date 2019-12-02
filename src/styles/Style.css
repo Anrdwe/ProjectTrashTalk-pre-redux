@@ -1,0 +1,157 @@
+.home-box{
+    width: 99%;
+    height: 500px;
+    position: relative;
+    background-color: white;
+    top: 800px;
+    margin: auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.home-text{
+    position: absolute;
+    top: 10px;
+    text-align: justify;
+    padding: 100px 100px;
+    font-family: roboto;
+}
+
+.about-box{
+    width: 99%;
+    height: 500px;
+    position: relative;
+    background-color: white;
+    top: 10vh;
+    margin: auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.about-text{
+    position: absolute;
+    font-family: roboto;
+    text-align: justify;
+    padding: 5% 5%;
+}
+
+.board{
+    position: relative;
+    overflow-x: hidden;
+}
+
+.board-box{
+    display: block;
+    position: relative;
+    background-color: rgb(245, 245, 245);
+    height: auto;
+    min-height: 100%;
+    width: 600px;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.board-text{
+    position: relative;
+    font-family: roboto;
+    text-align: center;
+    bottom: 30px
+}
+
+.board-name{
+    position: relative;
+    text-align: left;
+    color: #59A96A;
+    padding: 30px 30px;
+}
+
+.board-email{
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+
+.post-form{
+    top: 30px;
+    position: relative;
+    width: 300px;
+    height: auto;
+    margin: auto;
+    background-color: white;
+    padding: 20px 20px;
+    border-radius: 30px;
+}
+.submit-color{
+    background-color: rgba(121, 169, 89, 1); 
+}
+
+.post-input{
+    position: relative;
+    padding: 10px 10px;
+}
+
+.boardMessage{
+    font-family: roboto;
+    text-align: justify;
+    font-size: 16px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+.boardNameOrg{
+    font-family: roboto;
+    text-align: justify;
+    font-size: 20px;
+}
+
+.boardImage{
+    max-height: 50%;
+    margin: auto
+}
+
+.loginTitle{
+    text-align: center;
+    font-size: 30px;
+    font-family: roboto;
+    letter-spacing: 1.5px;
+}
+
+.loginIcon{
+    position: relative;
+    height: 40px;
+    margin: auto;
+    left: 110px;
+}
+
+.loginButton{
+    position: relative;
+    margin: auto;
+    left: 90px;
+}
+
+.wrongCredentialsError{
+    position: relative;
+    text-align: center;
+    margin: auto;
+    padding-bottom: 10px;
+}
+
+.signupTextUnderLoginButton{
+    position: relative;
+    text-align: center;
+    margin: auto;
+    padding-top: 10px;
+}
+
+.loginLoading{
+    position: relative;
+    margin: auto;
+    left: 110px;
+}
+
+.boardLoading{
+    position: relative;
+    margin: auto;
+    top: 100px;
+    left: 50%;
+}
