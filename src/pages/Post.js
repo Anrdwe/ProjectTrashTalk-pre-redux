@@ -51,15 +51,17 @@ class Post extends React.Component {
                     loading: false
                 })
             })
-        .catch(err => {
-            this.setState({
-                errors: err.response.data,
-                loading: false
+            .catch(err => {
+                this.setState({
+                    errors: err.response.data,
+                    loading: false
+                })
             })
-        })
-        Axios.post(`/post/${postId}/image`, this.state.imageInput)
-            .then(res => {
-                console.log(res)
+            .then(() => {
+                Axios.post(`/post/${postId}/image`, this.state.imageInput)
+                .then(res => {
+                    console.log(res)
+                })
             })
             .catch(err => {
                 this.setState({
