@@ -1,6 +1,6 @@
 import React from 'react'
 import "materialize-css"
-
+import LoadingComponent from './LoadingComponent'
 
 function PostComponent(props) {
     return(
@@ -12,10 +12,13 @@ function PostComponent(props) {
                         <textarea name="message" value={props.state.message} onChange={props.handleChange} id="message" className="materialize-textarea validate"></textarea>
                         <label for="message">Message</label>
                     </div>
+                    <input type="file" id='imageInput' onChange={props.handleImageChange}/>
+                    <label for="imageInput">Upload Image(optional)</label>
                 </div>
             </form>
             </div>
-            <a className="waves-effect waves-light btn submit-color postButton" href="/board" onClick={props.handleSubmit}>Submit</a>
+            {props.state.loading ? <LoadingComponent className="loginLoading"/> :
+            <a className="waves-effect waves-light btn submit-color postButton" href="/board" onClick={props.handleSubmit}>Submit</a>}
         </div>
     )
 }

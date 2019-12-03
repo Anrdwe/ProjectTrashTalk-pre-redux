@@ -7,12 +7,19 @@ class Post extends React.Component {
         super()
         this.state = {
             message: "",
-            imageUrl: "",
             loading: false,
+            imageInput: "",
             errors: {}
         }
-        this.handleChange=this.handleChange.bind(this)
-        this.handleSubmit= this.handleSubmit.bind(this)
+        this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleImageChange = this.handleImageChange.bind(this)
+    }
+    handleImageChange(event) {
+        const image = event.target.files[0]
+        this.setState({
+            imageInput: image
+        })
     }
 
     handleChange(event) {
@@ -21,8 +28,6 @@ class Post extends React.Component {
             [name] : value
         })
     }
-    //NOT DONE
-    //TODO: header for authorization 
     handleSubmit(event){
         event.preventDefault();
         this.setState({
@@ -46,6 +51,10 @@ class Post extends React.Component {
                 loading: false
             })
         })
+        Axios.post(`/post/${postId}/image`, imageInput)
+            .then(res => {
+                console.log(res)
+            })
     }
 
     render() {
