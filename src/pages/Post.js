@@ -58,10 +58,12 @@ class Post extends React.Component {
                 })
             })
             .then(() => {
-                Axios.post(`/post/${postId}/image`, this.state.imageInput)
-                .then(res => {
-                    console.log(res)
-                })
+                if (this.state.imageInput != '') {  
+                    Axios.post(`/post/${postId}/image`, this.state.imageInput)
+                        .then(res => {
+                        console.log(res)
+                    })
+                }
             })
             .catch(err => {
                 this.setState({

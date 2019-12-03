@@ -24,4 +24,4 @@ Access the site [here](http://trashtalk.netlify.com)
 >### Keeping track of the Id of a Post to upload an image to.
 >- Problem: the post request i made in the API to upload an image requires the Id of a Post in the path '/post/${postId}/image'.
 >- Solution:
->- - 1. Have the handleSubmit function do 2 requests 1 after the other. Change the '/post/' post request to return the postId in the response data object, then use that postId for the second post request, '/post/${postId}/image'.
+>- - 1. Have the handleSubmit function do 2 requests 1 after the other async. Change the '/post/' post request to return the postId in the response data object, then use that postId for the second post request, '/post/${postId}/image'.
