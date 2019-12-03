@@ -1,6 +1,7 @@
 import React from 'react'
 import PostComponent from '../components/PostComponent'
 import Axios from 'axios'
+import { timingSafeEqual } from 'crypto'
 
 class Post extends React.Component {
     constructor() {
@@ -17,8 +18,12 @@ class Post extends React.Component {
     }
     handleImageChange(event) {
         const image = event.target.files[0]
+        console.log(image)
+        //the API for an image post request takes formdata as input
+        const formData = new FormData()
+        formData.append('image', image, image.name)
         this.setState({
-            imageInput: image
+            imageInput: formData
         })
     }
 
@@ -39,8 +44,9 @@ class Post extends React.Component {
         let postId
         Axios.post('/post', postData)
             .then(res => {
-                console.log(res)
-                postId = res.data.id
+                postId = res.data.postId
+                console.log(postId)
+                console.log(res.data.message)
                 this.setState({
                     loading: false
                 })
@@ -51,15 +57,21 @@ class Post extends React.Component {
                 loading: false
             })
         })
-        Axios.post(`/post/${postId}/image`, imageInput)
+        Axios.post(`/post/${postId}/image`, this.state.imageInput)
             .then(res => {
                 console.log(res)
+            })
+            .catch(err => {
+                this.setState({
+                    errors: err.response.data,
+                    loading: false
+                })
             })
     }
 
     render() {
         return(
-            <PostComponent handleChange={this.handleChange} state={this.state} handleSubmit={this.handleSubmit}/>
+            <PostComponent handleChange={this.handleChange} state={this.state} handleSubmit={this.handleSubmit} handleImageChange={this.handleImageChange}/>
         )
     }
 }
