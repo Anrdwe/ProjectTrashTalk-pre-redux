@@ -1,5 +1,5 @@
 # Trashtalk
-Access the site [here](http://trashtalk.netlify.com)
+Access the site [here](https://trashtalk-pre-redux.netlify.com/)
 
 # TrashtalkAPI
 https://github.com/Anrdwe/TrashTalkAPI
