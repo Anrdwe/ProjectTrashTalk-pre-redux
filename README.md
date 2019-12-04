@@ -1,5 +1,9 @@
 # Trashtalk
 Access the site [here](http://trashtalk.netlify.com)
+
+# TrashtalkAPI
+https://github.com/Anrdwe/TrashTalkAPI
+
 ## Folder Structure
 > <strong>/components/</strong>
 > - files that only renders the user interface
@@ -10,9 +14,9 @@ Access the site [here](http://trashtalk.netlify.com)
 >> - Logo.js
 >> - Nav.js
 >> - PostComponent.js
->> - SignupComponent.js
+>> - SignupComponent.js <br>
 > <strong>/styles/</strong>
-> - css and image files
+> - css and image files <br>
 > <strong>/util/</strong>
 > - files that don't have state, nor render anything
 > - <strong>files</strong>
@@ -27,7 +31,6 @@ Access the site [here](http://trashtalk.netlify.com)
 >> - Login.js
 >> - Post.js
 >> - Signup.js
-
 
 ## Challenges:
 >### Login authentication. Keeping track and updating the authenticated state in App.js depending on the state of the authentication token which can expire.
@@ -44,3 +47,7 @@ Access the site [here](http://trashtalk.netlify.com)
 >- Problem: the post request i made in the API to upload an image requires the Id of a Post in the path '/post/${postId}/image'.
 >- Solution:
 >- - 1. Have the handleSubmit function do 2 requests 1 after the other async. Change the '/post/' post request to return the postId in the response data object, then use that postId for the second post request, '/post/${postId}/image'.
+
+## TODO:
+>### Comments
+>### Mobile sidebar
