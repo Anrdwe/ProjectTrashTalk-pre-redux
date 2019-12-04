@@ -15,12 +15,12 @@ function LoginComponent(props) {
                     <div className="input-field col s12">
                         <input name="email" value={props.state.email} onChange={props.handleChange} id="email" type="text" className="validate"/>
                         <span className='helper-text'>{props.state.errors.email && <p>{props.state.errors.email}</p>}</span>
-                        <label for="email">Email</label>
+                        <label htmlFor="email">Email</label>
                     </div>
                     <div className="input-field col s12">
                         <input name="password" value={props.state.password} onChange={props.handleChange} id="password" type="text" className="validate"/>
                         <span className='helper-text'>{props.state.errors.password && <p>{props.state.errors.password}</p>}</span>
-                        <label for="password">Password</label>
+                        <label htmlFor="password">Password</label>
                     </div>
                 </div>
             </form>

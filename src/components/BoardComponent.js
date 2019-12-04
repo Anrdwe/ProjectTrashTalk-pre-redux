@@ -19,7 +19,7 @@ function BoardComponent(props) {
                     </div>
                 </div>
                 <div className="card-action">
-                    <a href="#">Comment</a>
+                    <button href="#">Comment</button>
                 </div>
             </div>
         </div>

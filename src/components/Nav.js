@@ -6,7 +6,7 @@ import logo from "../styles/TrashTalkLogo.svg";
 function Nav() {
     return(
         <header>
-        <img class="logo" src={logo} alt="logo"/>
+        <img className="logo" src={logo} alt="logo"/>
         <div>
             <ul className="nav-links">
                 <Link to="/" className="nav-style">

@@ -15,22 +15,22 @@ function SignupComponent(props) {
                     <div className="input-field col s12">
                         <input name="email" value={props.state.email} onChange={props.handleChange} id="email" type="text" className="validate"/>
                         <span className='helper-text'>{props.state.errors.email && <p>{props.state.errors.email}</p>}</span>
-                        <label for="email">Email</label>
+                        <label htmlFor="email">Email</label>
                     </div>
                     <div className="input-field col s12">
                         <input name="username" value={props.state.username} onChange={props.handleChange} id="username" type="text" className="validate"/>
                         <span className='helper-text'>{props.state.errors.username && <p>{props.state.errors.username}</p>}</span>
-                        <label for="username">Username</label>
+                        <label htmlFor="username">Username</label>
                     </div>
                     <div className="input-field col s12">
                         <input name="password" value={props.state.password} onChange={props.handleChange} id="password" type="text" className="validate"/>
                         <span className='helper-text'>{props.state.errors.password && <p>{props.state.errors.password}</p>}</span>
-                        <label for="password">Password</label>
+                        <label htmlFor="password">Password</label>
                     </div>
                     <div className="input-field col s12">
                         <input name="confirmPassword" value={props.state.confirmPassword} onChange={props.handleChange} id="confirmPassword" type="text" className="validate"/>
                         <span className='helper-text'>{props.state.errors.confirmPassword && <p>{props.state.errors.confirmPassword}</p>}</span>
-                        <label for="confirmPassword">Confirm Password</label>
+                        <label htmlFor="confirmPassword">Confirm Password</label>
                     </div>
                 </div>
             </form>
