@@ -50,6 +50,7 @@ class Post extends React.Component {
                 this.setState({
                     loading: false
                 })
+                this.props.history.push('/board')
             })   
             .then(() => {
                 if (this.state.imageInput != '') {  

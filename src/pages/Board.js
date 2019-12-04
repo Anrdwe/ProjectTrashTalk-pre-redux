@@ -6,6 +6,7 @@ import dayjs from "dayjs"
 import relativeTime from 'dayjs/plugin/relativeTime'
 import BoardLoadingComponent from '../components/BoardLoadingComponent'
 
+
 class Board extends React.Component {
     constructor() {
         super()
