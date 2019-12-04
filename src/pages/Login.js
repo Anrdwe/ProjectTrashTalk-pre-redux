@@ -31,6 +31,9 @@ class Login extends React.Component {
             .then(res => {
                 //login successful
                 console.log(res)
+                // if (localStorage.FBIdToken) {
+                //     localStorage.deleteItem('FBIdToken')
+                // }
                 const FBIdToken = `Bearer ${res.data.token}`
                 //authentication token saved to local storage
                 localStorage.setItem('FBIdToken', FBIdToken)

@@ -52,7 +52,7 @@ class App extends React.Component {
           <Route path="/about" component={About} />
           {//if the user is not authenticated the '/post' route will go to '/login'
           } 
-          <UnauthRoute path="/post" component={Post} authenticated={this.state.authenticated}/>
+          <Route path="/post" component={Post} authenticated={this.state.authenticated}/>
           {//if the user is already authenticated the '/login' and '/signup' route will go to '/board'
           } 
           <AuthRoute path="/login" component={Login} authenticated={this.state.authenticated}/>

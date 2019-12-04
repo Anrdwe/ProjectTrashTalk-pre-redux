@@ -3,12 +3,31 @@ Access the site [here](http://trashtalk.netlify.com)
 ## Folder Structure
 > <strong>/components/</strong>
 > - files that only renders the user interface
+> - <strong>files</strong>
+>> - BoardComponent.js
+>> - BoardingLoadingComponent.js
+>> - LoadingComponent.js
+>> - Logo.js
+>> - Nav.js
+>> - PostComponent.js
+>> - SignupComponent.js
 > <strong>/styles/</strong>
 > - css and image files
 > <strong>/util/</strong>
 > - files that don't have state, nor render anything
+> - <strong>files</strong>
+>> - AuthRoute.js
+>> - UnauthRoute.js
 > <strong>/pages/</strong>
 > - files that contain state and functions
+> - <strong>files</strong>
+>> - About.js
+>> - Board.js
+>> - Home.js
+>> - Login.js
+>> - Post.js
+>> - Signup.js
+
 
 ## Challenges:
 >### Login authentication. Keeping track and updating the authenticated state in App.js depending on the state of the authentication token which can expire.
