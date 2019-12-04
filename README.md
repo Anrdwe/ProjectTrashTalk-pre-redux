@@ -50,4 +50,9 @@ https://github.com/Anrdwe/TrashTalkAPI
 
 ## TODO:
 >### Comments
->### Mobile sidebar
+>### Mobile sidebar nav
+>### Scaling sizes to fit mobile 
+>### Delete Post
+>### Edit Post
+>### Mark Post as Picked up or something to indicate its completed
+>### Add more user information ex: website link, address of orgarnization, etc.
