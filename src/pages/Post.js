@@ -1,7 +1,7 @@
 import React from 'react'
 import PostComponent from '../components/PostComponent'
 import Axios from 'axios'
-import { timingSafeEqual } from 'crypto'
+
 
 class Post extends React.Component {
     constructor() {
@@ -50,22 +50,23 @@ class Post extends React.Component {
                 this.setState({
                     loading: false
                 })
+            })   
+            .then(() => {
+                if (this.state.imageInput != '') {  
+                    Axios.post(`/post/${postId}/image`, this.state.imageInput)
+                        .then(res => {
+                        console.log(res)
+                    })
+                    .catch(err => {
+                        console.log(err)
+                    })
+                }
             })
             .catch(err => {
                 this.setState({
                     errors: err.response.data,
                     loading: false
                 })
-            })
-            .then(() => {
-                if (this.state.imageInput != '') {  
-                    Axios.post(`post/${postId}/image`, this.state.imageInput)
-                        .then(res => {
-                        console.log(res)
-                    })
-                }
-            })
-            .catch(err => {
                 console.log(err)
             })
     }

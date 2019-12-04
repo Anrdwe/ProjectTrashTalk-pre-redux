@@ -155,3 +155,16 @@
     top: 100px;
     left: 50%;
 }
+
+.postButton{
+    position: relative;
+    margin: auto;
+    left: 80px;
+}
+
+.pleaseLoginError{
+    position: relative;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 10px;
+}

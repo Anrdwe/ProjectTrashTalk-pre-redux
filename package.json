@@ -36,7 +36,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://us-east1-trashtalk-245817.cloudfunctions.net/api",
+  "proxy" : "https://us-east1-trashtalk-245817.cloudfunctions.net/api/login",
   "devDependencies": {
     "prettier": "^1.19.1"
   }

@@ -14,6 +14,10 @@ import Signup from './pages/Signup';
 
 import jwtDecode from 'jwt-decode';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Axios from 'axios';
+
+//The base Url for Axios is the firebase API
+Axios.defaults.baseURL = 'https://us-east1-trashtalk-245817.cloudfunctions.net/api'
 
 class App extends React.Component {
   constructor() {
