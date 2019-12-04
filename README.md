@@ -56,3 +56,6 @@ https://github.com/Anrdwe/TrashTalkAPI
 >### Edit Post
 >### Mark Post as Picked up or something to indicate its completed
 >### Add more user information ex: website link, address of orgarnization, etc.
+>### Limit number of posts shown on '/board', Add button to display more
+>### Add more information to post, ex: pickup location
+>### Sort Posts on '/board' by location and organization
