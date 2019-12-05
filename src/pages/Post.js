@@ -16,28 +16,32 @@ class Post extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleImageChange = this.handleImageChange.bind(this)
     }
+    //handles the state change for imageInput. Adds the inputed image as formData.
     handleImageChange(event) {
+        //PostComponent.js only has an input for 1 file. The inputed image is at index 0
         const image = event.target.files[0]
         console.log(image)
-        //the API for an image post request takes formdata as input
+        //the image post request takes formdata as input
         const formData = new FormData()
         formData.append('image', image, image.name)
         this.setState({
             imageInput: formData
         })
     }
-
+    //general handleChange
     handleChange(event) {
         const {name, value} = event.target
         this.setState({
             [name] : value
         })
     }
+
     handleSubmit(event){
         event.preventDefault();
         this.setState({
             loading: true
         })
+        //data to send to '/post' 
         const postData = {
             message: this.state.message
         }
@@ -50,10 +54,13 @@ class Post extends React.Component {
                 this.setState({
                     loading: false
                 })
+                //redirect the user to '/board' after successful '/post' post request
                 this.props.history.push('/board')
             })   
             .then(() => {
+                //If no image is submitted, the api has a default image
                 if (this.state.imageInput != '') {  
+                    //*** this post request is not working ***** Maybe i should async it like this
                     Axios.post(`/post/${postId}/image`, this.state.imageInput)
                         .then(res => {
                         console.log(res)
