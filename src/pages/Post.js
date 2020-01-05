@@ -59,7 +59,7 @@ class Post extends React.Component {
             })   
             .then(() => {
                 //If no image is submitted, the api has a default image
-                if (this.state.imageInput != '') {  
+                if (this.state.imageInput !== '') {  
                     //*** this post request is not working ***** Maybe i should async it like this
                     Axios.post(`/post/${postId}/image`, this.state.imageInput)
                         .then(res => {

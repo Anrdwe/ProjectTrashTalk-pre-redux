@@ -10,7 +10,7 @@ function BoardComponent(props) {
         <div className="col s12 m12">
             <div className="card">
                 <div className="card-image">
-                    <img src={props.imageUrl} className="boardImage" alt="post Image"/>
+                    <img src={props.imageUrl} className="boardImage" alt="post"/>
                     <div className="card-content">
                         <p className="boardNameOrg">{props.username}, {props.organization}</p>
                         <p className="boardData">{props.date}</p>
