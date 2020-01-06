@@ -1,6 +1,8 @@
 import React from 'react'
 import LoginComponent from '../components/LoginComponent'
 import Axios from 'axios'
+import jwtDecode from 'jwt-decode'
+import { Redirect } from 'react-router-dom'
 
 class Login extends React.Component {
     constructor() {
@@ -62,10 +64,27 @@ class Login extends React.Component {
     }
 
     render() {
-        return (
-            <LoginComponent handleChange={this.handleChange} state={this.state} 
+        const checkAuth = () => {
+            const token = localStorage.FBIdToken;
+            if(token) {
+                //we have token, we want to decode it with jwt-decode, inside there is a expiration date
+                //the exp value is in seconds and can be passed into date() to get the exact time the token expires
+                const decodedToken = jwtDecode(token);
+                if(decodedToken.exp * 1000 > Date.now()) {
+                    //if the token is not expired, we redirect them to the board page
+                    return <Redirect to='/board'/>
+                } else {
+                    return <LoginComponent handleChange={this.handleChange} state={this.state} 
+                    handleSubmit={this.handleSubmit} errors={this.errors} 
+                    loading={this.loading}/>
+                }
+            }
+            return <LoginComponent handleChange={this.handleChange} state={this.state} 
                 handleSubmit={this.handleSubmit} errors={this.errors} 
                 loading={this.loading}/>
+        }
+        return (
+            checkAuth()
         )
     }
 }
