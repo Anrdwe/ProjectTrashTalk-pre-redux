@@ -23,12 +23,12 @@ function SignupComponent(props) {
                         <label htmlFor="username">Username</label>
                     </div>
                     <div className="input-field col s12">
-                        <input name="password" value={props.state.password} onChange={props.handleChange} id="password" type="text" className="validate"/>
+                        <input name="password" value={props.state.password} onChange={props.handleChange} id="password" type="password" className="validate"/>
                         <span className='helper-text'>{props.state.errors.password && <p>{props.state.errors.password}</p>}</span>
                         <label htmlFor="password">Password</label>
                     </div>
                     <div className="input-field col s12">
-                        <input name="confirmPassword" value={props.state.confirmPassword} onChange={props.handleChange} id="confirmPassword" type="text" className="validate"/>
+                        <input name="confirmPassword" value={props.state.confirmPassword} onChange={props.handleChange} id="confirmPassword" type="password" className="validate"/>
                         <span className='helper-text'>{props.state.errors.confirmPassword && <p>{props.state.errors.confirmPassword}</p>}</span>
                         <label htmlFor="confirmPassword">Confirm Password</label>
                     </div>

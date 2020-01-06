@@ -79,7 +79,9 @@ class Login extends React.Component {
                         loading={this.loading}/>
                 }
             }
-            return <Redirect to='/board'/>
+            return <SignupComponent handleChange={this.handleChange} state={this.state} 
+                handleSubmit={this.handleSubmit} errors={this.errors} 
+                loading={this.loading}/>
         }
         return (
             checkAuth()

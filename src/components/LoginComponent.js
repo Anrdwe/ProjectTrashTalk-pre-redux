@@ -18,7 +18,7 @@ function LoginComponent(props) {
                         <label htmlFor="email">Email</label>
                     </div>
                     <div className="input-field col s12">
-                        <input name="password" value={props.state.password} onChange={props.handleChange} id="password" type="text" className="validate"/>
+                        <input name="password" value={props.state.password} onChange={props.handleChange} id="password" type="password" className="validate"/>
                         <span className='helper-text'>{props.state.errors.password && <p>{props.state.errors.password}</p>}</span>
                         <label htmlFor="password">Password</label>
                     </div>
