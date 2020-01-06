@@ -41,7 +41,8 @@ https://github.com/Anrdwe/TrashTalkAPI
 >- - 1. React Redux
 >- - 2. Passing a setAuthentication function into a custom <Route> component that will then pass the function to the Login.js component.
 >- - 3. Remove the authenticated state and check if a token exists or expired in a custom <Route> component to redirect the user accordingly.
->- - 4. Remove the authenticated state completely and remove logins.
+>- - 4. Redirect from a page depending on the token.
+>- - 5. Remove the authenticated state completely and remove logins.
 
 >### Keeping track of the Id of a Post to upload an image to.
 >- Problem: the post request i made in the API to upload an image requires the Id of a Post in the path '/post/${postId}/image'.

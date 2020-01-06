@@ -1,7 +1,8 @@
 import React from 'react'
 import PostComponent from '../components/PostComponent'
 import Axios from 'axios'
-
+import jwtDecode from 'jwt-decode'
+import { Redirect } from 'react-router-dom'
 
 class Post extends React.Component {
     constructor() {
@@ -16,6 +17,7 @@ class Post extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleImageChange = this.handleImageChange.bind(this)
     }
+
     //handles the state change for imageInput. Adds the inputed image as formData.
     handleImageChange(event) {
         //PostComponent.js only has an input for 1 file. The inputed image is at index 0
@@ -79,9 +81,26 @@ class Post extends React.Component {
             })
     }
 
+    
+
     render() {
+        const checkAuth = () => {
+            const token = localStorage.FBIdToken;
+            if(token) {
+                //we have token, we want to decode it with jwt-decode, inside there is a expiration date
+                //the exp value is in seconds and can be passed into date() to get the exact time the token expires
+                const decodedToken = jwtDecode(token);
+                if(decodedToken.exp * 1000 < Date.now()) {
+                    //if the token is expired, we redirect them to the login page
+                    return <Redirect to='/login'/>
+                } else {
+                    return <PostComponent handleChange={this.handleChange} state={this.state} handleSubmit={this.handleSubmit} handleImageChange={this.handleImageChange}/>
+                }
+            }
+            return <Redirect to='/login'/>
+        }
         return(
-            <PostComponent handleChange={this.handleChange} state={this.state} handleSubmit={this.handleSubmit} handleImageChange={this.handleImageChange}/>
+            checkAuth()
         )
     }
 }
